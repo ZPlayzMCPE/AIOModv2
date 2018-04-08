@@ -24,7 +24,7 @@ class Loader extends PluginBase implements Listener{
 @mkdir("/AIOMod/Bans/");
 @mkdir("/AIOMod/Spieler/");
 @mkdir("/AIOMod/Notify/");
-		$oldreports = scandir("/AIOMod/Bans");
+		$oldreports = scandir("/AIOMod/Bans/");
 		$this->getServer()->getPluginManager()->registerEvents(new JoinListener($this), $this);
 $this->getServer()->getPluginManager()->registerEvents(new ChatListener($this), $this);
 	$this->getServer()->getScheduler()->scheduleRepeatingTask(new Check($this, $oldreports), 20);
