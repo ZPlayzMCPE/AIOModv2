@@ -13,7 +13,7 @@ class Check extends PluginTask{
         parent::__construct($plugin);
     }
 
-    public function onRun($tick) {
+    public function onRun(int $tick) {
 			foreach(Server::getInstance()->getOnlinePlayers() as $p){
 				$config = new Config("/AIOMod/Spieler/". $p->getName() . ".yml", Config::YAML);
 				if($config->get("Aktiv") != null){
