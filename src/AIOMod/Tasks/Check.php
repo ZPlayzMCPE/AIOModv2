@@ -42,7 +42,7 @@ class Check extends PluginTask{
 						}
 				}
 			}
-        $new  = scandir("/AIOMod/Bans/");
+        $new  = @mkdir("/AIOMod/Bans/");
         $tobc = array_diff($new, $this->oldreports);
         if ($tobc !== []) {
             foreach ($tobc as $repfile) {
