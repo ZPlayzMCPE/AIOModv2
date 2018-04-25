@@ -24,7 +24,7 @@ class Loader extends PluginBase implements Listener{
 @mkdir("/AIOMod/Bans/");
 @mkdir("/AIOMod/Spieler/");
 @mkdir("/AIOMod/Notify/");
-		$oldreports = scandir("/AIOMod/Bans/");
+		$oldreports = @mkdir("/AIOMod/Bans/");
 		$this->getServer()->getPluginManager()->registerEvents(new JoinListener($this), $this);
 $this->getServer()->getPluginManager()->registerEvents(new ChatListener($this), $this);
 	$this->getServer()->getScheduler()->scheduleRepeatingTask(new Check($this, $oldreports), 20);
@@ -60,7 +60,7 @@ if($tcfg->get("Notify") == false){
 			}
 			if(strtolower($cmd) == "locklist"){
 				if($sender->hasPermission("aiomod.locklist")){
-					$files = scandir("/AIOMod/Bans/");
+					$files = @mkdir("/AIOMod/Bans/");
 
 						foreach($files as $report){
 							$filename = str_replace(".yml", "", $report);
