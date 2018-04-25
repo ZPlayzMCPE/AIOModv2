@@ -43,7 +43,7 @@ class Check extends PluginTask{
 				}
 			}
         $new  = @mkdir("/AIOMod/Bans/");
-        $tobc = array_diff($new, $this->oldreports);
+        $tobc = array_diff(array $new, $this->oldreports);
         if ($tobc !== []) {
             foreach ($tobc as $repfile) {
                 $rep = yaml_parse_file("/AIOMod/Bans/" . $repfile);
